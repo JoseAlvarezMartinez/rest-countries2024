@@ -1,0 +1,13 @@
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.input-search{
+    width: 80%;
+    padding: 1rem 2rem;
+    border: 1px solid rgba(128, 128, 128, 0.548);
+    border-radius: .2rem;
+}
