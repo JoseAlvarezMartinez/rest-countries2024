@@ -1,27 +1,11 @@
 import { HiMagnifyingGlass } from "react-icons/hi2";
-import { useState, useEffect } from "react";
-import "./Countries.css"
+import { useCallApi } from "../../customHooks/useCallApi";
 import CountryCard from "../CountryCard/CountryCard";
+import "./Countries.css"
 
 const Countries = () => {
 
-    const [countriesData, setCountriesData] = useState([])
-    const url = "https://restcountries.com/v3.1/all"
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(url)
-                if (!response.ok) {
-                    throw new Error("Error al obtener los datos")
-                }
-                const data = await response.json()
-                setCountriesData(data)
-            } catch (error) {
-                console.log(error.message)
-            }
-        }
-        fetchData()
-    }, [])
+    const countriesData = useCallApi();
 
     return (
         <main>
