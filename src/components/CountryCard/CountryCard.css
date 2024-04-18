@@ -1,21 +1,31 @@
-.country-card-container{
+.country-card-container {
     background-color: #fff;
     width: 80%;
     margin: 2rem auto;
     padding-bottom: 3rem;
-    border-top-right-radius: .2rem;
-    border-top-left-radius: .2rem;
+    border-radius: .5rem;
 }
-.country-card-anchor{
+
+.country-card-anchor {
     text-decoration: none;
     color: unset;
 }
-.country-card-image{
+
+.country-card-image {
     width: 100%;
     object-fit: cover;
-    border-top-right-radius: 1rem;
-    border-top-left-radius: 1rem;
+    border-top-right-radius: .5rem;
+    border-top-left-radius: .5rem;
 }
-.country-card-container :not(.country-card-image){
+
+.country-card-container :not(.country-card-image) {
     padding: 0 2rem;
+}
+
+.country-card-container :last-child {
+    margin-bottom: 0;
+}
+
+.country-card-title {
+    margin-top: 2rem;
 }
