@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { useCallApi, countryRender } from "../../customHooks/useCallApi"
+import { useCallApi, countryRender } from "../../../customHooks/useCallApi"
 import { useEffect } from "react"
 const CountryCardDetail = () => {
 

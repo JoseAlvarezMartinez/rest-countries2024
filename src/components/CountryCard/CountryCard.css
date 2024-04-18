@@ -1,8 +1,8 @@
 .country-card-container {
     background-color: #fff;
     max-height: 100%;
-    width: 23rem;
-    max-width: 90%;
+
+    width: 20rem;
     margin: 2rem auto;
     border-radius: .5rem;
 }
@@ -20,10 +20,10 @@
     border-top-left-radius: .5rem;
 }
 
-
 .country-card-title {
     margin-top: 2rem;
 }
-.country-card-texts{
+
+.country-card-texts {
     padding: 0 2rem;
 }
