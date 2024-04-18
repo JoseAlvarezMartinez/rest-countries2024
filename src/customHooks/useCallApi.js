@@ -21,3 +21,5 @@ export function useCallApi() {
 
     return countriesData
 }
+
+export const countryRender = (countriesArray,id) => countriesArray.find(countryData => countryData.name.common === id)

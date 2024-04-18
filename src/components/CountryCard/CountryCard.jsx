@@ -4,7 +4,7 @@ const CountryCard = ({ countryData }) => {
     const { flags: { png: countryImage }, name: { common }, flags: { alt }, population, region, capital } = countryData
 
     return (
-        <Link to={`country/${common}`}>
+        <Link to={`/${common}`}>
             <img src={countryImage} alt={alt} />
             <h2>{common}</h2>
             {region && <h3>Region: {region} <span></span></h3>}
