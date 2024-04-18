@@ -1,15 +1,23 @@
 import { useParams } from "react-router-dom"
 import { useCallApi, countryRender } from "../../../customHooks/useCallApi"
-import { useEffect } from "react"
-const CountryCardDetail = () => {
+import { useState, useEffect } from "react"
 
+const CountryCardDetail = () => {
   const countriesData = useCallApi()
   const { countryName } = useParams()
+  const countryInformation = countryRender(countriesData, countryName)
+  const [loading, setLoading] = useState(true)
 
-  const countryInfo = countryRender(countriesData, countryName)
+  useEffect(() => {
+    if (countryInformation !== undefined) {
+
+      setLoading(false)
+
+    }
+  }, [countryInformation])
   return (
     <div>
-      <h2>Detalles</h2>
+        {loading ? "Cargando" : "Informacion"}
     </div>
   )
 }
