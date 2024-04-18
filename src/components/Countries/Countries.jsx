@@ -8,13 +8,14 @@ const Countries = () => {
     const countriesData = useCallApi();
 
     return (
-        <main>
+        <main className="home-main">
             <div className="search">
                 {/* <HiMagnifyingGlass size={"1.5rem"} color={"rgba(128, 128, 128, 0.548)"} className="search-icon"/> */}
                 <input className="input-search" type="text" placeholder="Search for a country..." />
             </div>
-
-            {countriesData.map(countryData => <CountryCard key={countryData.name.common} countryData={countryData} />)}
+            <div className="flex-responsive">
+                {countriesData.map(countryData => <CountryCard key={countryData.name.common} countryData={countryData} />)}
+            </div>
         </main>
     )
 }
