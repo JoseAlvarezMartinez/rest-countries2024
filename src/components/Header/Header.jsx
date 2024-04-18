@@ -7,7 +7,7 @@ const Header = () => {
     const [darkMode, setDarkMode] = useState(false);
 
     useEffect(() => {
-        document.body.style.backgroundColor = darkMode ? "hsl(207, 26%, 17%)" : "#fff"
+        document.body.style.backgroundColor = darkMode ? "hsl(207, 26%, 17%)" : "hsl(0, 0%, 95.29411764705881%)"
     }, [darkMode])
     return (
         <header className="header-container">
