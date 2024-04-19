@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Home from "./pages/Home/Home"
-import CountryCardDetail from './pages/Home/CountryCardDetail/CountryCardDetail'
-import { createBrowserRouter, Router, RouterProvider } from 'react-router-dom'
+import CountryCardDetail from './pages/CountryCardDetail/CountryCardDetail'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 
 
