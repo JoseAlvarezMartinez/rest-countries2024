@@ -6,9 +6,9 @@ import "./Countries.css"
 const Countries = () => {
 
     const countriesData = useCallApi();
-    const [countries, setCountries] = useState(countriesData)
-    const [error, setError] = useState(false)
+    const [countries, setCountries] = useState(null)
     const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(false)
 
     useEffect(() => {
         if (countriesData.length) {
@@ -17,14 +17,15 @@ const Countries = () => {
         }
     }, [countriesData])
 
-    function testing(e) {
-        const newCountriesFilter = countriesData.filter(country => country.name.common.toLowerCase().includes(e.toLowerCase()))
-
-        if (newCountriesFilter.length) {
-            setCountries(newCountriesFilter)
-            setError(false)
-        } else {
-            setError(true)
+    function handleKeyDown(e) {
+        if (e.key === "Enter") {
+            const newCountriesFilter = countriesData.filter(country => country.name.common.toLowerCase().includes(e.target.value.toLowerCase()))
+            if (newCountriesFilter.length) {
+                setCountries(newCountriesFilter)
+                setError(false)
+            } else {
+                setError(true)
+            }
         }
     }
 
@@ -32,15 +33,14 @@ const Countries = () => {
     return (
         <main className="home-main">
             <div className="search">
-                {/* <HiMagnifyingGlass size={"1.5rem"} color={"rgba(128, 128, 128, 0.548)"} className="search-icon"/> */}
                 <input
-                    onChange={(e) => testing(e.target.value)}
+                    onKeyDown={e => handleKeyDown(e)}
                     className="input-search" type="text" placeholder="Search for a country..." />
             </div>
 
             {
                 error ?
-                    <p>Error en la busqueda</p> :
+                    <p>No se encontraron paises con ese nombre</p> :
                     <div className="flex-responsive">
                         {
                             countries.map(countryData => <CountryCard key={countryData.name.common} countryData={countryData} />)
