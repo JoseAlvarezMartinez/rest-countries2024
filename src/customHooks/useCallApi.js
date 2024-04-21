@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 export function useCallApi() {
     const [countriesData, setCountriesData] = useState([])
+
+
+    const countryRender = (id) => countriesData.find(countryData => countryData.name.official === id)
+    
     const url = "https://restcountries.com/v3.1/all"
     useEffect(() => {
         const fetchData = async () => {
@@ -19,7 +23,8 @@ export function useCallApi() {
     }, [])
 
 
-    return countriesData
+    return {
+        countriesData,
+        countryRender,
+    }
 }
-
-export const countryRender = (countriesArray,id) => countriesArray.find(countryData => countryData.name.official === id)

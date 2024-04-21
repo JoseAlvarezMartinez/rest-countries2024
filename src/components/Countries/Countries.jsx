@@ -5,7 +5,7 @@ import "./Countries.css"
 
 const Countries = () => {
 
-    const countriesData = useCallApi();
+    const {countriesData} = useCallApi();
     const [countries, setCountries] = useState(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
