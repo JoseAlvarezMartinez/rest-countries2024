@@ -1,7 +1,10 @@
+import "./CountryCardDetail.css"
 import CircularProgress from '@mui/material/CircularProgress';
+import Header from "../../components/Header/Header"
 import { useParams } from "react-router-dom"
 import { useCallApi } from "../../customHooks/useCallApi"
 import { useState, useEffect } from "react"
+import { Link } from 'react-router-dom';
 
 const CountryCardDetail = () => {
   const { countryName } = useParams()
@@ -17,22 +20,33 @@ const CountryCardDetail = () => {
 
   if (loading) return <CircularProgress color="inherit" />
   return (
-    <div>
-      <img src={countryInformation.flags.png} alt="" />
-      <h2>{countryInformation.name.common}</h2>
-      <h3>Native Name: <span>{countryInformation.name.nativeName[Object.keys(countryInformation.name.nativeName)[0]].official}</span></h3>
-      <h3>Population: <span>{countryInformation.population}</span></h3>
-      <h3>Region: <span>{countryInformation.region}</span></h3>
-      <h3>Sub Region: <span>{countryInformation.subregion}</span></h3>
-      <h3>Capital: <span>{countryInformation.capital}</span></h3>
-      <h3>Top Level Domain: <span>{countryInformation.tld}</span></h3>
-      <h3>Currencies: <span>{countryInformation.currencies[Object.keys(countryInformation.currencies)[0]].name}</span></h3>
-      {/* {
+
+    <>
+      <Header />
+      <div className="country-card-detail-container">
+        <Link className='back-button' to="/">Back</Link>
+        <div>
+          <img className="detail-image" src={countryInformation.flags.png} alt="" />
+          <h2 className="detail-name">{countryInformation.name.common}</h2>
+          <h3>Native Name: <span className="detail-info">{countryInformation.name.nativeName[Object.keys(countryInformation.name.nativeName)[0]].official}</span></h3>
+          <h3>Population: <span className="detail-info">{countryInformation.population}</span></h3>
+          <h3>Region: <span className="detail-info">{countryInformation.region}</span></h3>
+          <h3>Sub Region: <span className="detail-info">{countryInformation.subregion}</span></h3>
+          <h3>Capital: <span className="detail-info">{countryInformation.capital}</span></h3>
+
+          <section className="detail-lower">
+            <h3>Top Level Domain: <span className="detail-info">{countryInformation.tld}</span></h3>
+            <h3>Currencies: <span className="detail-info">{countryInformation.currencies[Object.keys(countryInformation.currencies)[0]].name}</span></h3>
+          </section>
+          {/* {
         countryInformation.languages.map(language =>  <h3>Idioma</h3>)
       }
       <h3>Languages: </h3> */}
 
-    </div>
+        </div>
+      </div>
+    </>
+
   )
 }
 

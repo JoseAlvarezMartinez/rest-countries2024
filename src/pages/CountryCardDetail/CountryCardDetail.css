@@ -1,0 +1,33 @@
+.back-button{
+    text-decoration: none;
+    background-color: #fff;
+    display: inline-block;
+    margin: 2rem 0;
+    border: 1px solid #0000003b;
+    padding: .5rem 1.5rem;
+    border-radius: .2rem;
+}
+
+.country-card-detail-container{
+    width: 90%;
+    margin: 0 auto;
+}
+.detail-image{
+    width: 100%;
+    max-width: 23rem;
+}
+.detail-name{
+    font-weight: 900;
+}
+.detail-info{
+    font-weight: 400;
+}
+.detail-lower{
+    margin-top: 3rem;
+}
+.detail-lower :last-child{
+    margin-top: 0;
+}
+.detail-lower :first-child{
+    margin-bottom: .5rem;
+}
