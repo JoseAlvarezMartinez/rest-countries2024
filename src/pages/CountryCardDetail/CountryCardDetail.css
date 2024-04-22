@@ -1,4 +1,4 @@
-.back-button{
+.back-button {
     text-decoration: none;
     background-color: #fff;
     display: inline-block;
@@ -8,26 +8,59 @@
     border-radius: .2rem;
 }
 
-.country-card-detail-container{
+.country-card-detail-container {
     width: 90%;
     margin: 0 auto;
 }
-.detail-image{
+
+.detail-image {
     width: 100%;
     max-width: 23rem;
 }
-.detail-name{
+
+.detail-name {
     font-weight: 900;
 }
-.detail-info{
+
+.detail-info {
     font-weight: 400;
 }
-.detail-lower{
+
+.detail-lower {
     margin-top: 3rem;
 }
-.detail-lower :last-child{
+
+.detail-lower :last-child {
     margin-top: 0;
 }
-.detail-lower :first-child{
+
+.detail-lower :first-child {
     margin-bottom: .5rem;
+}
+
+@media only screen and (min-width: 600px) {
+
+    .detail-image {
+        width: 20rem;
+    }
+
+    .country-card-detail-container {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .detail-information-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .detail-name {
+        margin-top: 0;
+    }
+
+    .country-card-detail-container {
+        width: 80%;
+    }
 }

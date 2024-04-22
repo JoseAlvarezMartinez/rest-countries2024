@@ -25,19 +25,21 @@ const CountryCardDetail = () => {
       <Header />
       <div className="country-card-detail-container">
         <Link className='back-button' to="/">Back</Link>
-        <div>
+        <div className="detail-information-container">
           <img className="detail-image" src={countryInformation.flags.png} alt="" />
-          <h2 className="detail-name">{countryInformation.name.common}</h2>
-          <h3>Native Name: <span className="detail-info">{countryInformation.name.nativeName[Object.keys(countryInformation.name.nativeName)[0]].official}</span></h3>
-          <h3>Population: <span className="detail-info">{countryInformation.population}</span></h3>
-          <h3>Region: <span className="detail-info">{countryInformation.region}</span></h3>
-          <h3>Sub Region: <span className="detail-info">{countryInformation.subregion}</span></h3>
-          <h3>Capital: <span className="detail-info">{countryInformation.capital}</span></h3>
+          <div className="detail-texts">
+            <h2 className="detail-name">{countryInformation.name.common}</h2>
+            <h3>Native Name: <span className="detail-info">{countryInformation.name.nativeName[Object.keys(countryInformation.name.nativeName)[0]].official}</span></h3>
+            <h3>Population: <span className="detail-info">{countryInformation.population}</span></h3>
+            <h3>Region: <span className="detail-info">{countryInformation.region}</span></h3>
+            <h3>Sub Region: <span className="detail-info">{countryInformation.subregion}</span></h3>
+            <h3>Capital: <span className="detail-info">{countryInformation.capital}</span></h3>
 
-          <section className="detail-lower">
-            <h3>Top Level Domain: <span className="detail-info">{countryInformation.tld}</span></h3>
-            <h3>Currencies: <span className="detail-info">{countryInformation.currencies[Object.keys(countryInformation.currencies)[0]].name}</span></h3>
-          </section>
+            <section className="detail-lower">
+              <h3>Top Level Domain: <span className="detail-info">{countryInformation.tld}</span></h3>
+              <h3>Currencies: <span className="detail-info">{countryInformation.currencies[Object.keys(countryInformation.currencies)[0]].name}</span></h3>
+            </section>
+          </div>
           {/* {
         countryInformation.languages.map(language =>  <h3>Idioma</h3>)
       }
