@@ -59,7 +59,9 @@
     .detail-name {
         margin-top: 0;
     }
-
+    .detail-image{
+        width: 100%;
+    }
     .country-card-detail-container {
         width: 80%;
     }
