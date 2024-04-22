@@ -1,6 +1,5 @@
 import "./CountryCardDetail.css"
 import CircularProgress from '@mui/material/CircularProgress';
-import Header from "../../components/Header/Header"
 import { useParams } from "react-router-dom"
 import { useCallApi } from "../../customHooks/useCallApi"
 import { useState, useEffect } from "react"
@@ -22,7 +21,7 @@ const CountryCardDetail = () => {
   return (
 
     <>
-      <Header />
+
       <div className="country-card-detail-container">
         <Link className='back-button' to="/">Back</Link>
         <div className="detail-information-container">
